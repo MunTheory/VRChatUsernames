@@ -30,9 +30,9 @@ fn main() {
         for line in reader.lines() {
             let line = line.expect("unable to read line");
 
-            if let Some(name) = line
-                .strip_prefix("[Behaviour] OnPlayerJoined ")
-                .or_else(|| line.strip_prefix("[Behaviour] OnPlayerLeft "))
+            if let Some((_, name)) = line
+                .split_once("[Behaviour] OnPlayerJoined ")
+                .or_else(|| line.split_once("[Behaviour] OnPlayerLeft "))
             {
                 writer
                     .write_all(name.as_bytes())
