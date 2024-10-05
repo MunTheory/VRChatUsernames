@@ -1,0 +1,15 @@
+[package]
+name = "vrchat-usernames"
+version = "0.1.0"
+authors = ["MünTheory <github@muntheory.com>"]
+edition = "2021"
+rust-version = "1.81"
+readme = "README.md"
+repository = "https://github.com/MunTheory/VRChatUsernames"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[profile.release]
+lto = "fat"
+panic = "abort"
+codegen-units = 1
