@@ -17,7 +17,7 @@ fn main() {
         let entry = entry.expect("unable to read an item from directory");
 
         let name = entry.file_name();
-        if !name.to_string_lossy().contains("output_log") {
+        if !name.to_string_lossy().starts_with("output_log_") {
             continue;
         }
 
